@@ -1,11 +1,30 @@
-# Creator Cover Agent Skill
+# Feige Cover Design Skill
 
-一套面向中文知识创作者与教程内容的封面 Agent Skill：先确认标题，再生成 6 个不同的视觉事件；母版确认后，可靠适配多平台比例，并为 `5:1` 超宽横幅提供独立保真分支。
+非哥结合自己长期封面创作、抽卡、返工和多比例适配经验，持续改造出来的一套中文封面 Agent Skill：先确认标题，再做平台语义路由，生成 6 个不同的视觉事件；母版确认后，可靠适配多平台比例，并为 `5:1` 超宽横幅提供独立保真分支。
 
 [![Agent Skill](https://img.shields.io/badge/Agent-Skill-111827)](./SKILL.md)
+[![Created by Feige](https://img.shields.io/badge/created%20by-Feige-E66A14)](https://github.com/s840207702)
+[![Based on gbro-cover-design](https://img.shields.io/badge/based%20on-gbro--cover--design-0F766E)](https://github.com/pyang5166/gbro-cover-design)
 [![Ratios](https://img.shields.io/badge/ratios-3%3A4%20%7C%204%3A3%20%7C%201%3A1%20%7C%205%3A2%20%7C%2016%3A9%20%7C%202.35%3A1%20%7C%205%3A1-E66A14)](./references/ratio-native-recomposition.md)
 [![QA](https://img.shields.io/badge/QA-text%20%7C%20layout%20%7C%20identity%20%7C%20color-0F766E)](./references/quality-review.md)
 [![License](https://img.shields.io/badge/license-MIT-2563EB)](./LICENSE)
+
+## 项目来源与非哥版改造
+
+本项目基于 [pyang5166/gbro-cover-design](https://github.com/pyang5166/gbro-cover-design) 的 MIT 开源工作继续创作；该项目本身又基于 [feitangyuan/oh-my-cover-design](https://github.com/feitangyuan/oh-my-cover-design) 演进。
+
+上游提供了“从文章内容生成真人封面提示词、以 3:4 为默认竖版、使用人物与产品参考图”的重要起点。非哥在自己的长期实际生产中，没有只做换皮或增加几条提示词，而是重新设计了主要工作流：
+
+| 上游起点 | Feige 版本的结合与优化 |
+| --- | --- |
+| 固定 3:4、三轮提问、10 种风格模板 | 标题确认后自动做语义路由，默认生成 6 个内容专属视觉事件，不要求用户先懂风格分类 |
+| 人脸图 + 额外产品素材 | 人物参考只锁身份；平台图标按标题自动核验和准备，头像型图标不会被放大成第二张巨脸 |
+| 输出一份生图提示词 | 输出 6 份真正不同的完整提示词，由用户抽卡并确认满意母版 |
+| 只负责 3:4 提示词 | 母版确认后适配 `4:3 / 1:1 / 5:2 / 16:9 / 2.35:1 / 5:1`，并生成公众号组合图 |
+| 提醒检查中文 | 建立硬文字清单，逐比例原尺寸 Review，只重做错字、留白或构图失败的比例 |
+| 没有极限横幅专用路线 | 为精确 `2000×400` 的 `5:1` 增加空背景补全与原像素主体重排，避免整图压扁或重绘 |
+
+完整的上游版权与差异说明见 [NOTICE.md](./NOTICE.md)。
 
 ## 真实 3:4 封面案例
 
@@ -54,23 +73,37 @@
 
 每张结果都经过硬文字、空间利用、人物、手部、Logo、尺寸和色彩 Review；只重做失败比例。
 
-## 第一次使用链路
+## 非哥版四阶段工作流
 
-```text
-输入选题、正文或现成标题
-          ↓
-确认唯一封面标题
-          ↓
-识别必要品牌事实并生成 6 个视觉事件提示词
-          ↓
-在宿主图像工具中生成并确认满意母版（默认 3:4）
-          ↓
-普通比例保持构图并行适配 ─┐
-                            ├→ 原尺寸 Review → 只修失败比例
-5:1 原像素前景保真重排 ───┘
-          ↓
-生成 1:1 + 2.35:1 公众号组合图并交付
-```
+### 一、先确认封面标题
+
+- 已经想好标题：直接锁定原文，不擅自改写。
+- 没想好标题：把 Obsidian 里的脚本、正文或内容直接发给 Agent，它会提炼 5 个短标题并给出主推。
+- 标题未确认前，不提前写完整画面提示词。
+
+### 二、根据标题做平台语义路由
+
+标题确认后，Agent 判断本期涉及几个明确平台、产品或模型，以及它们是并列、对比还是流程关系。
+
+例如“MiniMax H3 本地部署教学”同时明确涉及 ComfyUI 与 MiniMax，可以开放双平台图标关系；普通单产品教程则以一个准确图标和一个内容核心物为重点，不为凑数量堆 Logo。
+
+### 三、生成六套提示词并抽出满意母版
+
+- 默认输出 6 套不同造型与视觉事件的完整提示词。
+- 同步准备标题真正需要的官方平台图标：本地已有核验文件就复用，没有时再从官方来源获取。
+- 用户准备一张清晰正面人物照片，只承担身份参考，不继承自拍姿势、衣服、背景和光线。
+- 非哥当前个人工作流优先把提示词、人物图和平台图标交给 ChatGPT 网页端原生 Image 2 抽卡。这是多轮实测后的默认选择；公开 Skill 仍兼容其他支持参考图的图像模型。
+- 只有用户明确确认满意、采用或定稿的图片，才成为后续尺寸适配的唯一母版。
+
+### 四、一张满意母版适配完整尺寸包
+
+默认从 `3:4` 母版生成 `4:3`、`1:1`、`5:2`、`16:9`、`2.35:1` 和 `5:1`：
+
+- 普通比例保持原构图和元素组合，只做必要的等比缩放、轻微位移、间距与背景延展。
+- `5:2` 可用于工具箱网站滚屏海报，也适合 X 文章封面。
+- `1:1` 与 `2.35:1` 通过 Review 后，生成公众号文章专用的左侧方图 + 右侧宽图组合图。
+- `5:1` 用于飞书云文档等超宽背景，固定为 `2000×400`；先生成空背景，再解构并重排母版中的标题、人物、Logo 和核心物，禁止整图压扁、整图重绘和全局追色。
+- 每个结果都按原尺寸检查错字、空间利用、人物、手部、Logo、构图、尺寸和色彩，只重做失败比例。
 
 ## 仓库提供什么
 
@@ -92,8 +125,8 @@
 ### 1. 克隆
 
 ```bash
-git clone https://github.com/s840207702/creator-cover-agent-skill.git
-cd creator-cover-agent-skill
+git clone https://github.com/s840207702/feige-cover-design-skill.git
+cd feige-cover-design-skill
 python3 -m pip install -r requirements.txt
 ```
 
@@ -103,14 +136,14 @@ Codex 项目：
 
 ```bash
 mkdir -p .agents/skills
-ln -s "$(pwd)" .agents/skills/creator-cover
+ln -s "$(pwd)" .agents/skills/feige-cover-design
 ```
 
 Claude Code 项目：
 
 ```bash
 mkdir -p .claude/skills
-ln -s "$(pwd)" .claude/skills/creator-cover
+ln -s "$(pwd)" .claude/skills/feige-cover-design
 ```
 
 也可以把整个仓库复制到对应的 Skill 目录。
@@ -120,19 +153,19 @@ ln -s "$(pwd)" .claude/skills/creator-cover
 从主题开始：
 
 ```text
-使用 $creator-cover，为“本地部署大模型的新手教程”设计封面。先帮我确认标题。
+使用 $feige-cover-design，为“本地部署大模型的新手教程”设计封面。先帮我确认标题。
 ```
 
 标题已确认：
 
 ```text
-使用 $creator-cover。标题固定为“本地部署大模型”，输出 6 套真正不同的封面提示词。
+使用 $feige-cover-design。标题固定为“本地部署大模型”，输出 6 套真正不同的封面提示词。
 ```
 
 母版已确认：
 
 ```text
-使用 $creator-cover，把这张满意母版生成完整尺寸包，包括 5:1 和公众号组合图。
+使用 $feige-cover-design，把这张满意母版生成完整尺寸包，包括 5:1 和公众号组合图。
 ```
 
 ## 默认输出
@@ -175,6 +208,7 @@ python3 -m unittest discover -s tests
 ├── examples/
 ├── CONTRIBUTING.md
 ├── SECURITY.md
+├── NOTICE.md
 └── LICENSE
 ```
 
@@ -184,4 +218,4 @@ python3 -m unittest discover -s tests
 
 ## 许可证
 
-Skill 文本和代码采用 [MIT License](./LICENSE)。案例图片、人物肖像、商标和第三方素材不因根目录 MIT License 自动获得授权。
+Skill 文本和代码采用 [MIT License](./LICENSE)，并保留 [gbro-cover-design](https://github.com/pyang5166/gbro-cover-design) 与 [oh-my-cover-design](https://github.com/feitangyuan/oh-my-cover-design) 的上游版权声明。案例图片、人物肖像、商标和第三方素材不因根目录 MIT License 自动获得授权。

@@ -1,6 +1,6 @@
 # 贡献指南
 
-感谢你改进 Creator Cover Agent Skill。
+感谢你改进 Feige Cover Design Skill。
 
 ## 可以贡献什么
 

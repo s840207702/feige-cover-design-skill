@@ -333,7 +333,7 @@ def render_pack(manifest_path: Path, scale: float, overwrite: bool) -> list[Path
 
 
 def run_self_test() -> None:
-    with tempfile.TemporaryDirectory(prefix="creator-cover-ratio-pack-") as temp:
+    with tempfile.TemporaryDirectory(prefix="feige-cover-design-ratio-pack-") as temp:
         root = Path(temp)
         source_path = root / "source.png"
         background_path = root / "background.png"

@@ -15,6 +15,7 @@ REQUIRED = (
     "LICENSE",
     "CONTRIBUTING.md",
     "SECURITY.md",
+    "NOTICE.md",
     "requirements.txt",
     "agents/openai.yaml",
     "references/concept-routing.md",
@@ -73,16 +74,21 @@ def main() -> int:
                 failures.append(f"FORBIDDEN {label}: {path.relative_to(ROOT)}")
 
     skill = (ROOT / "SKILL.md").read_text(encoding="utf-8") if (ROOT / "SKILL.md").is_file() else ""
-    if not skill.startswith("---\nname: creator-cover\n"):
-        failures.append("SKILL.md frontmatter must declare name: creator-cover")
+    if not skill.startswith("---\nname: feige-cover-design\n"):
+        failures.append("SKILL.md frontmatter must declare name: feige-cover-design")
     if "2000×400" not in skill or "5:1" not in skill:
         failures.append("SKILL.md must retain the exact 5:1 contract")
     if "硬文字清单" not in skill:
         failures.append("SKILL.md must retain the hard-text review gate")
 
     metadata = (ROOT / "agents/openai.yaml").read_text(encoding="utf-8") if (ROOT / "agents/openai.yaml").is_file() else ""
-    if "$creator-cover" not in metadata:
-        failures.append("agents/openai.yaml default_prompt must mention $creator-cover")
+    if "$feige-cover-design" not in metadata:
+        failures.append("agents/openai.yaml default_prompt must mention $feige-cover-design")
+
+    license_text = (ROOT / "LICENSE").read_text(encoding="utf-8") if (ROOT / "LICENSE").is_file() else ""
+    for upstream in ("gbro-cover-design", "oh-my-cover-design"):
+        if upstream not in license_text:
+            failures.append(f"LICENSE must retain upstream notice: {upstream}")
 
     if failures:
         print("Public-package audit failed:", file=sys.stderr)
