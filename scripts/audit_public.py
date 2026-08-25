@@ -25,6 +25,11 @@ REQUIRED = (
     "scripts/render-ratio-pack.py",
     "scripts/build-wechat-cover-stitch.py",
     "examples/LICENSE.md",
+    "examples/approved-covers/README.md",
+    "examples/approved-covers/minimax-h3-local-deployment-3x4.png",
+    "examples/approved-covers/workbuddy-beginner-tutorial-3x4.png",
+    "examples/approved-covers/workbuddy-seven-office-skills-3x4.png",
+    "examples/approved-covers/opensquilla-topic-radar-3x4.png",
 )
 FORBIDDEN_PATTERNS = (
     ("macOS absolute user path", re.compile(r"/" + r"Users/[^/\s]+/")),

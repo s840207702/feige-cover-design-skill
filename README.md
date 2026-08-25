@@ -7,6 +7,39 @@
 [![QA](https://img.shields.io/badge/QA-text%20%7C%20layout%20%7C%20identity%20%7C%20color-0F766E)](./references/quality-review.md)
 [![License](https://img.shields.io/badge/license-MIT-2563EB)](./LICENSE)
 
+## 真实 3:4 封面案例
+
+这些成品展示的不是四套固定模板，而是同一套工作流如何围绕不同标题，重新设计人物动作、核心物、标题身份和品牌色。
+
+<table>
+  <tr>
+    <td width="50%" valign="top">
+      <img src="./examples/approved-covers/minimax-h3-local-deployment-3x4.png" alt="MiniMax H3 本地部署喂饭级教学 3:4 封面" width="100%">
+      <br><strong>MiniMax H3 本地部署</strong>
+      <br><sub>人物托举两个产品核心，品牌色从左右向中心汇合；大标题、真人与双产品关系在缩略图中仍能同时读清。</sub>
+    </td>
+    <td width="50%" valign="top">
+      <img src="./examples/approved-covers/workbuddy-beginner-tutorial-3x4.png" alt="WorkBuddy 新手入门教学 3:4 封面" width="100%">
+      <br><strong>WorkBuddy 新手入门教学</strong>
+      <br><sub>把应用图标实体化为巨大工具核心，人物的托举与指向共同解释“入门”，没有退回普通人物站桩。</sub>
+    </td>
+  </tr>
+  <tr>
+    <td width="50%" valign="top">
+      <img src="./examples/approved-covers/workbuddy-seven-office-skills-3x4.png" alt="WorkBuddy 7 个神仙办公 Skill 3:4 封面" width="100%">
+      <br><strong>WorkBuddy 7 个神仙办公 Skill</strong>
+      <br><sub>用七层办公能力抽屉承载数字与功能关系，人物正在拉出结果层，核心视觉事件只属于这个标题。</sub>
+    </td>
+    <td width="50%" valign="top">
+      <img src="./examples/approved-covers/opensquilla-topic-radar-3x4.png" alt="OpenSquilla 搭建 AI 选题雷达 3:4 封面" width="100%">
+      <br><strong>OpenSquilla 搭建 AI 选题雷达</strong>
+      <br><sub>品牌核心被改造成近距离雷达装置，人物同时操作与交付结果，黑橙材质统一标题、动作和产品事实。</sub>
+    </td>
+  </tr>
+</table>
+
+以上图片由作者明确授权在本仓库中公开展示。案例图片、人物肖像和第三方商标不随根目录 MIT License 开放再利用，详见 [案例素材许可边界](./examples/LICENSE.md)。
+
 ## 它解决什么问题
 
 普通“改尺寸”提示词经常出现两种失败：
@@ -122,7 +155,7 @@ python3 -m unittest discover -s tests
 
 ## 隐私与品牌边界
 
-- 仓库不包含任何真人照片、私有案例、历史输出或本机素材目录。
+- 除 `examples/approved-covers/` 中明确授权公开展示的成品外，仓库不包含人物原始参考照片、私有案例、历史输出或本机素材目录。
 - 人物身份参考只应在当前任务中由用户主动提供，不应被默认归档或提交到 Git。
 - 产品名、Logo 和商标归各自权利方所有，只应从官方来源取得并按其规则使用。
 - 未经明确授权，不要把客户案例、人物肖像或生成成品提交到公共 `examples/`。
