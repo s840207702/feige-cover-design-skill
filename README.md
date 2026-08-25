@@ -206,6 +206,7 @@ python3 -m unittest discover -s tests
 ├── scripts/
 ├── tests/
 ├── examples/
+├── licenses/
 ├── CONTRIBUTING.md
 ├── SECURITY.md
 ├── NOTICE.md
@@ -218,4 +219,4 @@ python3 -m unittest discover -s tests
 
 ## 许可证
 
-Skill 文本和代码采用 [MIT License](./LICENSE)，并保留 [gbro-cover-design](https://github.com/pyang5166/gbro-cover-design) 与 [oh-my-cover-design](https://github.com/feitangyuan/oh-my-cover-design) 的上游版权声明。案例图片、人物肖像、商标和第三方素材不因根目录 MIT License 自动获得授权。
+Skill 文本和代码采用 [MIT License](./LICENSE)。[gbro-cover-design](https://github.com/pyang5166/gbro-cover-design) 的完整 MIT 版权文本保存在 [licenses/gbro-cover-design-LICENSE](./licenses/gbro-cover-design-LICENSE)，其中同时保留了 `oh-my-cover-design` 的上游声明。案例图片、人物肖像、商标和第三方素材不因根目录 MIT License 自动获得授权。

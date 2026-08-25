@@ -16,6 +16,7 @@ REQUIRED = (
     "CONTRIBUTING.md",
     "SECURITY.md",
     "NOTICE.md",
+    "licenses/gbro-cover-design-LICENSE",
     "requirements.txt",
     "agents/openai.yaml",
     "references/concept-routing.md",
@@ -85,10 +86,13 @@ def main() -> int:
     if "$feige-cover-design" not in metadata:
         failures.append("agents/openai.yaml default_prompt must mention $feige-cover-design")
 
-    license_text = (ROOT / "LICENSE").read_text(encoding="utf-8") if (ROOT / "LICENSE").is_file() else ""
+    upstream_license = ROOT / "licenses" / "gbro-cover-design-LICENSE"
+    license_text = upstream_license.read_text(encoding="utf-8") if upstream_license.is_file() else ""
+    notice_text = (ROOT / "NOTICE.md").read_text(encoding="utf-8") if (ROOT / "NOTICE.md").is_file() else ""
+    attribution_text = license_text + "\n" + notice_text
     for upstream in ("gbro-cover-design", "oh-my-cover-design"):
-        if upstream not in license_text:
-            failures.append(f"LICENSE must retain upstream notice: {upstream}")
+        if upstream not in attribution_text:
+            failures.append(f"upstream attribution must retain notice: {upstream}")
 
     if failures:
         print("Public-package audit failed:", file=sys.stderr)

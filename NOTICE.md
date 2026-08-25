@@ -25,4 +25,4 @@ Feige 版本在长期实际使用中重新设计和新增了以下主要能力�
 - 精确 `2000×400` 的 `5:1` 空背景补全与原像素前景重排；
 - `1:1 + 2.35:1` 公众号组合图与跨平台确定性脚本。
 
-上游版权声明已保留在根目录 [LICENSE](./LICENSE) 中。当前仓库的案例图片适用 [examples/LICENSE.md](./examples/LICENSE.md)，不随 MIT License 开放再利用。
+根目录 [LICENSE](./LICENSE) 是 Feige 版本的标准 MIT License；`gbro-cover-design` 的原始 MIT 版权文本完整保留在 [licenses/gbro-cover-design-LICENSE](./licenses/gbro-cover-design-LICENSE) 中。当前仓库的案例图片适用 [examples/LICENSE.md](./examples/LICENSE.md)，不随 MIT License 开放再利用。
