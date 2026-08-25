@@ -1,13 +1,26 @@
-# Feige Cover Design Skill
+<h1 align="center">Feige Cover Design Skill</h1>
 
-非哥结合自己长期封面创作、抽卡、返工和多比例适配经验，持续改造出来的一套中文封面 Agent Skill：先确认标题，再做平台语义路由，生成 6 个不同的视觉事件；母版确认后，可靠适配多平台比例，并为 `5:1` 超宽横幅提供独立保真分支。
+<p align="center"><strong>非哥创作的中文封面设计 Agent Skill</strong></p>
 
-[![Agent Skill](https://img.shields.io/badge/Agent-Skill-111827)](./SKILL.md)
-[![Created by Feige](https://img.shields.io/badge/created%20by-Feige-E66A14)](https://github.com/s840207702)
-[![Based on gbro-cover-design](https://img.shields.io/badge/based%20on-gbro--cover--design-0F766E)](https://github.com/pyang5166/gbro-cover-design)
-[![Ratios](https://img.shields.io/badge/ratios-3%3A4%20%7C%204%3A3%20%7C%201%3A1%20%7C%205%3A2%20%7C%2016%3A9%20%7C%202.35%3A1%20%7C%205%3A1-E66A14)](./references/ratio-native-recomposition.md)
-[![QA](https://img.shields.io/badge/QA-text%20%7C%20layout%20%7C%20identity%20%7C%20color-0F766E)](./references/quality-review.md)
-[![License](https://img.shields.io/badge/license-MIT-2563EB)](./LICENSE)
+<p align="center">
+  标题确认 · 平台语义路由 · 六概念提示词 · 多比例保构图适配 · 5:1 超宽保真重组
+</p>
+
+<p align="center">
+  <a href="./SKILL.md"><img alt="Agent Skill" src="https://img.shields.io/badge/Agent-Skill-111827?style=flat-square"></a>
+  <a href="https://github.com/s840207702"><img alt="Created by Feige" src="https://img.shields.io/badge/created%20by-Feige-E66A14?style=flat-square"></a>
+  <a href="./LICENSE"><img alt="MIT License" src="https://img.shields.io/badge/license-MIT-2563EB?style=flat-square"></a>
+</p>
+
+<p align="center">
+  <a href="./references/ratio-native-recomposition.md"><img alt="7 Ratios" src="https://img.shields.io/badge/ratios-7-E66A14?style=flat-square"></a>
+  <a href="https://github.com/pyang5166/gbro-cover-design"><img alt="Based on gbro-cover-design" src="https://img.shields.io/badge/based%20on-gbro--cover--design-0F766E?style=flat-square"></a>
+  <a href="./references/quality-review.md"><img alt="Review Gate" src="https://img.shields.io/badge/review-text%20%7C%20layout%20%7C%20identity%20%7C%20color-0F766E?style=flat-square"></a>
+</p>
+
+<p align="center">
+  把长期封面抽卡、返工和多比例适配经验，沉淀为一套可复用的四阶段工作流。
+</p>
 
 ## 项目来源与非哥版改造
 
