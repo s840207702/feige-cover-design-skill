@@ -18,4 +18,4 @@
 
 ## 报告问题
 
-请通过 GitHub Security Advisory 私下报告可能暴露凭证、个人数据或未授权素材的问题，不要在公开 Issue 中粘贴敏感内容。
+请通过本仓库的 [GitHub 私密漏洞报告页面](https://github.com/s840207702/feige-cover-design-skill/security/advisories/new) 报告可能暴露凭证、个人数据或未授权素材的问题，不要在公开 Issue 中粘贴敏感内容。

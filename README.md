@@ -92,7 +92,7 @@
 - 默认输出 6 套不同造型与视觉事件的完整提示词。
 - 同步准备标题真正需要的官方平台图标：本地已有核验文件就复用，没有时再从官方来源获取。
 - 用户准备一张清晰正面人物照片，只承担身份参考，不继承自拍姿势、衣服、背景和光线。
-- 非哥当前个人工作流优先把提示词、人物图和平台图标交给 ChatGPT 网页端原生 Image 2 抽卡。这是多轮实测后的默认选择；公开 Skill 仍兼容其他支持参考图的图像模型。
+- 非哥当前个人工作流优先把提示词、人物图和平台图标交给 ChatGPT 网页端的 ChatGPT Images 2.0 抽卡。这是多轮实测后的默认选择；公开 Skill 仍兼容其他支持参考图的图像模型。
 - 只有用户明确确认满意、采用或定稿的图片，才成为后续尺寸适配的唯一母版。
 
 ### 四、一张满意母版适配完整尺寸包
@@ -122,31 +122,39 @@
 
 ## 快速开始
 
-### 1. 克隆
+### 1. 克隆到独立目录
 
 ```bash
-git clone https://github.com/s840207702/feige-cover-design-skill.git
-cd feige-cover-design-skill
-python3 -m pip install -r requirements.txt
+mkdir -p "$HOME/.local/share/agent-skills"
+git clone https://github.com/s840207702/feige-cover-design-skill.git \
+  "$HOME/.local/share/agent-skills/feige-cover-design-skill"
+python3 -m pip install -r \
+  "$HOME/.local/share/agent-skills/feige-cover-design-skill/requirements.txt"
 ```
 
 ### 2. 安装为项目 Skill
 
-Codex 项目：
+进入实际要使用本 Skill 的项目，再创建链接。不要在 `feige-cover-design-skill` 仓库内部执行下面的命令。
+
+Codex 项目（把第一行替换成你的项目绝对路径）：
 
 ```bash
+cd /absolute/path/to/your-codex-project
 mkdir -p .agents/skills
-ln -s "$(pwd)" .agents/skills/feige-cover-design
+ln -s "$HOME/.local/share/agent-skills/feige-cover-design-skill" \
+  .agents/skills/feige-cover-design
 ```
 
-Claude Code 项目：
+Claude Code 项目（把第一行替换成你的项目绝对路径）：
 
 ```bash
+cd /absolute/path/to/your-claude-project
 mkdir -p .claude/skills
-ln -s "$(pwd)" .claude/skills/feige-cover-design
+ln -s "$HOME/.local/share/agent-skills/feige-cover-design-skill" \
+  .claude/skills/feige-cover-design
 ```
 
-也可以把整个仓库复制到对应的 Skill 目录。
+如果不希望使用软链接，也可以把整个仓库复制到目标项目对应的 Skill 目录。安装完成后重新启动或刷新宿主 Agent，再通过 `$feige-cover-design` 调用。
 
 ### 3. 直接调用
 
