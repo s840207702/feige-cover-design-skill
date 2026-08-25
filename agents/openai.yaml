@@ -1,0 +1,4 @@
+interface:
+  display_name: "创作者封面工作流"
+  short_description: "标题路由、六概念提示词与全平台封面保真适配工作流"
+  default_prompt: "使用 $creator-cover 从标题确认开始完成封面创意，并在母版确认后生成包含 5:1 的多比例尺寸包。"
