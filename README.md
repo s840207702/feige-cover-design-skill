@@ -13,9 +13,9 @@
 </p>
 
 <p align="center">
-  <a href="./references/ratio-native-recomposition.md"><img alt="7 Ratios" src="https://img.shields.io/badge/ratios-7-E66A14?style=flat-square"></a>
+  <a href="./references/ratio-native-recomposition.md"><img alt="7 Ratio Formats" src="https://img.shields.io/badge/ratio%20pack-7%20formats-E66A14?style=flat-square"></a>
   <a href="https://github.com/pyang5166/gbro-cover-design"><img alt="Based on gbro-cover-design" src="https://img.shields.io/badge/based%20on-gbro--cover--design-0F766E?style=flat-square"></a>
-  <a href="./references/quality-review.md"><img alt="Review Gate" src="https://img.shields.io/badge/review-text%20%7C%20layout%20%7C%20identity%20%7C%20color-0F766E?style=flat-square"></a>
+  <a href="./references/quality-review.md"><img alt="Quality Review Gate" src="https://img.shields.io/badge/quality-review%20gate-0F766E?style=flat-square"></a>
 </p>
 
 <p align="center">
